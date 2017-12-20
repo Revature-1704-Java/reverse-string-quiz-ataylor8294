@@ -2,19 +2,5 @@ language: java
 sudo: false
 install: true
 
-addons:
-  sonarcloud:
-    organization: "mehrabr-github"
-    token:
-      secure: "K8YIeWHRwqxBRa0jciryzGeKThc8vfpSSSiRKVtID3hrwKVgtAjh/u0Jja2Hig5fteNKWZ6OciVrQdXm3y6kHmm4WBDW0eneO4W6R30Erb7RFigPf2mDyMX69O2/NpFDVUpx/p6QExxO+eW04JHzU04WEqCOZdpeHNf++crDQZW1JNy4w7+4GIVnt0eWKzpcKSdH7wzBMpsULUjWjeeOdSIY5Boxow0BPWEjPsZKbWj64lWIERJsW/0M6oAWukxvUV++NLFsC3eoMXFcvCy/9fhohVyoWbPyoqNSEu8usvc58Mf2FH8tYHjIxdlGMCggBukMEmFDnaV2ldnPbSV9V16sOIqQbplqFnWTLYq1uxQPkzAFQq57J1Gc1WyKUfv/Lm9iXz1w9OBFPze6oXrci+/X/m5vfxFx7n3U0avZtKTLQcHJ/iIZvrM9R8xQoeGcpS8Do4pQF420c8O854fgCdxDu688+MzSWtDzsUFE4aLJ0nzuqakt4vTnHjIA17jl447DwGGixhLdFuoZlswa5xfMMbkR+qSatk8dfgGAoNZdCbMbmQzrrmBB+75pBl3jth+UOkyDgwKGLM5Th4KjXySac86QKqSrWXsGLD41DKigSIhuAUKmaIu03E93YWQO2blQb2a/BAwsaC4CXlf8nS1BzI87pFQMlXU9lXi49JQ="
-
-jdk:
-  - oraclejdk8
-
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-
-cache:
-  directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.sonar/cache'
+ - mvn clean test
